@@ -102,10 +102,14 @@ ion-header{
   }
 }
 
-ion-menu-button{
+ion-menu-button, .ion-menu-button{
   ion-icon{
     font-size: 2rem !important;
   }
+}
+.ion-menu-button{
+  min-width: 2.7rem;
+  text-align: center;
 }
 
 ion-grid,ion-col{
@@ -207,4 +211,82 @@ ion-tabs{
 
 ion-fab-button{
   --background:linear-gradient(var(--ion-color-primary-tint), var(--ion-color-primary-shade));
+}
+
+ion-picker{
+  --height:150px !important;
+  
+  .picker-opt{
+    font-size: 1.6rem;
+  }
+  .picker-toolbar{
+    height: 40px !important;
+    -webkit-box-pack:justify !important;
+    -ms-flex-pack:justify !important;
+    justify-content:space-between !important;
+    border-bottom:none !important;
+
+    .picker-button{
+      height: 40px !important;
+      font-size: 1.6rem !important;
+      text-transform: capitalize !important;
+    }
+  }
+  .picker-columns{
+    height: 100px !important;
+    -webkit-perspective: 1000px !important;
+    perspective: 1000px !important;
+  }
+    
+  .picker-opt{
+    font-size: 1.6rem !important;
+    height: 30px !important;
+    line-height: 30px !important;
+  }
+  .picker-opts-left,
+  .picker-opts-right{
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .picker-opts, .picker-prefix, .picker-suffix {
+    top:32px !important;
+  }
+
+  .picker-opt.picker-opt-selected, .picker-prefix, .picker-suffix {
+      color: var(--ion-color-primary) !important;
+  }
+
+  .picker-above-highlight,.picker-below-highlight{
+    display: none !important;
+  }
+
+  @include bp(xs){
+    --height:120px !important;
+    --width:auto !important;
+
+    .picker-wrapper{
+      margin-left: 5rem !important;
+      margin-right: 5rem !important;
+      border-top-right-radius:10px !important;
+      border-top-left-radius: 10px !important;
+    }
+
+    .picker-toolbar{
+      height: 30px !important;
+
+      .picker-button{
+        height: 30px !important;
+        font-size: 1.4rem !important;
+      }
+    }
+
+    .picker-opts, .picker-prefix, .picker-suffix {
+      top:25px !important;
+    }
+    .picker-columns{
+      height: 80px !important;
+    }
+  }
 }

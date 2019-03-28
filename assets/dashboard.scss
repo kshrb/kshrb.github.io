@@ -5,7 +5,7 @@
 }
 .usage-date-container{
   .inner-content{
-    padding: 1.2rem 3rem;
+    padding: 1.2rem 2rem;
     background: rgba(255,255,255,0.9);
     @include border-radius(4.5rem);
     @include bp(xxs){
@@ -14,18 +14,17 @@
   }
   position: absolute;
   z-index: 2;
-  left: 50%;
-  width: 39.5rem;
+  left: 0;
+  width: 100%;
   top:2rem;
-  @include transform(translatex(-50%));
+
   @include bp(xs){
-    width: 100%;
     padding-left: 1.6rem;
     padding-right: 1.6rem;
   }
   .usage-date{
-    padding-right: 1.5rem;
-    margin-right: 1rem;
+    padding-right: 1rem;
+    margin-right: 1.5rem;
     border-right: 1px solid var(--dark-grey);
     ion-select{
       padding: 0;
@@ -58,6 +57,7 @@
       font-weight: 400;
       height: auto;
       overflow: visible;
+      text-transform: capitalize;
       @include border-radius(0);
       img{
         margin-right:0.5rem;
@@ -65,12 +65,8 @@
         display: block;
         margin-top: -0.6rem;
       }
-      ion-label{
-        white-space: nowrap;
-      }
       @include bp(md){
         font-size: 1.6rem;
-
         img{
           height: 2.7rem;
         }
@@ -199,16 +195,22 @@ ion-button{
       margin-right: 0;
     }
   }
-  ion-select{
+  ion-select, .select-text{
     padding: 0;
     font-size: 1.3rem;
     -webkit-box-align:center;
     -ms-flex-align:center;
     align-items:center;
-    .select-icon{
-      display: none;
+
+    ion-icon{
+      font-size: 2.2rem;
+      color:#ababab;
     }
+  
   }
+}
+.select-text{
+  cursor: pointer;
 }
 
 ion-select{
@@ -229,6 +231,7 @@ ion-select{
     min-height: 0;
     @include border-radius(1rem);
     @include box-shadow(0,0,16px,rgba(0,0,0,0.2));
+    background: rgba(255,255,255,0.7);
     ion-list-header{
       min-height: 0;
       font-size: 1.5rem;
@@ -243,6 +246,7 @@ ion-select{
       --inner-border-width:0;
       --border-style:none;
       --border-color:var(--transparent);
+      --background:var(--transparent);
       --padding-start:0;
       --inner-padding-end:0;
       --ion-safe-area-right:0;
