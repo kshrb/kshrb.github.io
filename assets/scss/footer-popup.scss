@@ -1,0 +1,51 @@
+
+
+
+    .footer-popup{
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        max-width: 95%;
+        @include transform(translateX(-50%));
+
+        .btns-footer{
+            position: relative;
+            z-index: 9;
+
+            .btn-bottom-fixed{
+                min-width: 10.5rem;
+                width: auto;
+                height: 3.5rem;
+                background:var(--light-red);
+                --background:var(--light-red);
+                --border-radius: 2rem 2rem 0 0;
+                border-radius: 2rem 2rem 0 0;
+                font-size: 1.3rem;
+                font-family: var(--medium);
+                line-height: normal;
+                letter-spacing: 0.01rem;
+                text-align: center;
+                color:var(--ion-color-light);
+                margin: 0.5rem 1rem 0;
+                border: 0.15rem solid var(--light-red);
+                border-bottom: none !important;
+
+                &.btn-light{
+                    background: var(--ion-color-light);
+                    --background: var(--ion-color-light);
+                    --background-focused:var(--ion-color-light);
+                    color: var(--light-red);
+                    --color-focused:var(--light-red);
+                    border-bottom: none;                
+                    overflow: hidden;   
+                }
+            }
+
+        }
+
+        .all-day-summary{
+            padding-bottom: 4rem;
+        }
+
+
+    }
