@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1559736979275,
+  "timestamp": 1559737764978,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -1245,9 +1245,9 @@
       "patterns": [
         "\\/.*"
       ],
-      "strategy": "freshness",
+      "strategy": "performance",
       "maxSize": 2000,
-      "maxAge": 3600000,
+      "maxAge": 86400000,
       "timeoutMs": 5000,
       "version": 1
     }
@@ -2477,18 +2477,6 @@
     {
       "positive": true,
       "regex": "^\\/.*$"
-    },
-    {
-      "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
-    },
-    {
-      "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
-    },
-    {
-      "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
     }
   ]
 }
