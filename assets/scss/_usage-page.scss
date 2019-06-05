@@ -1,0 +1,274 @@
+@import 'src/theme/mixin';
+.diesel-usage-container{
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+}
+
+.diesel-usage-content{
+    width:743px;
+    margin: 0 auto;
+    max-width: 100%;
+    @include bp(xs){
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    ion-list{
+        padding: 0;
+        margin: 0;
+        min-height: 0;
+        @include border-radius(0 0 0.5rem 0.5rem);
+        @include box-shadow(0,5px,8px,rgba(0,0,0,0.1));
+        ion-item{
+            --min-height: 0;
+            --inner-border-width:0;
+            --border-style:none;
+            --border-color:var(--transparent);
+            --padding-start:0;
+            --inner-padding-end:0;
+            --ion-safe-area-right:0;
+            --background:var(--transparent);
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+            font-weight: 500;
+            ion-icon{
+                font-size: 2rem;
+                margin-right: 1rem;
+            }
+            .unit{
+                font-size: 1.5rem;
+                span{
+                font-size: 75%;
+                }
+            }
+            ion-label{
+                margin: 0;
+            }
+        }
+        @include bp(md){
+            ion-item{
+                font-size: 1.6rem;
+                padding: 1.5rem 3rem;
+
+                .unit{
+                    font-size: 1.8rem;
+                }
+            }
+            @include border-radius(0 0 1.2rem 1.2rem);
+        }
+       
+    }
+
+}
+.diesel-usage-graph{
+    height: 27.5rem;
+    background: url('../../../assets/images/grass-bg.png') no-repeat left bottom;
+    position: relative;
+    width: 100%;
+
+    .engine-hrs-icon{
+        position: absolute;
+        bottom:4rem;
+        left: 2.2rem;
+        img{
+            display: block;
+        }
+    }
+    .diesel-tank{
+        position: absolute;
+        bottom:1.3rem;
+        left: 2.2rem;
+        height: 23.5rem;
+        width: 14.7rem;
+        overflow: hidden;
+
+        ion-text{
+            position: absolute;
+            z-index: 1;
+            left:1.6rem;
+            bottom: 5.7rem;
+
+            h4,h3{
+                margin: 0;
+            }
+            h4{
+                font-size: 2rem;
+            }
+            h3{
+                font-size: 3rem;
+                font-weight: 600;
+            }
+        }
+        
+        &:before{
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: url('../../../assets/images/fuel-tank.png') no-repeat left bottom;
+            background-size: contain;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+    }
+
+    .tank-level-container{
+        height: calc(100% - 2rem);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: .1rem;
+        overflow: hidden;
+
+        span{
+            background-color: var(--fuel);
+            display: block;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            &:before{
+                content: "";
+                background: url('../../../assets/images/wave-pattern.png') left bottom;
+                background-repeat-y: no-repeat;
+                background-size: contain;
+                height: 1.4rem;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+
+                animation: slide 20s linear infinite;
+                -webkit-animation: slide 20s linear infinite;
+
+                @keyframes slide {
+                    from { background-position: 0 0; }
+                    to { background-position: -700px 0; }
+                }
+                @-webkit-keyframes slide {
+                    from { background-position: 0 0; }
+                    to { background-position: -700px 0; }
+                }
+
+                @include bp(md){
+                    @keyframes slide {
+                        from { background-position: 0 0; }
+                        to { background-position: -1500px 0; }
+                    }
+                    @-webkit-keyframes slide {
+                        from { background-position: 0 0; }
+                        to { background-position: -1500px 0; }
+                    }
+                }
+            }
+        }
+    }
+
+    .tractor-icons{
+        position: absolute;
+        bottom: 1.3rem;
+        right:35%;
+
+        img{
+            display: block;
+        }
+    }
+
+    @include border-radius(0.5rem);
+    @include box-shadow(0,-5px,8px,rgba(0,0,0,0.1));
+
+    @include bp(md){
+        @include border-radius(1.2rem);
+    }
+}
+
+.tractor-service-due{
+    margin-top: 3rem;
+    ion-label{
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: .5rem;
+        display: block;
+
+        @include bp(md){
+            font-size:1.5rem;
+        }
+    }
+    ion-progress-bar{
+        height: 2.5rem;
+        @include border-radius(2.5rem);
+        --background: linear-gradient(var(--ion-color-secondary-tint), var(--ion-color-secondary-shade));
+        --progress-background:linear-gradient(var(--ion-color-light-tint), var(--ion-color-light-shade));
+    }
+    .hrs-unit{
+        font-size: 1.2rem;
+        font-weight: 500;
+        color:var(--ion-color-secondary-shade);
+        text-align: center;
+        margin-top: 0.5rem;
+        
+        span{
+            font-size: 75%;
+            font-weight: 400;
+        }
+        @include bp(md){
+            font-size:1.4rem;
+        }
+    }
+}
+
+@include bp(sm-m){
+    .diesel-usage-graph{
+        height: 17.7rem;
+        background: url('../../../assets/images/grass-bg-sm.png') no-repeat left bottom;
+        .engine-hrs-icon{
+            position: absolute;
+            bottom:2rem;
+            left: 1.6rem;
+            img{
+                display: block;
+                width: 12.3rem;
+            }
+        }
+        .tractor-icons{
+            bottom:.9rem;
+            right: 10%;
+            img{
+                width: 7.4rem;
+            }
+        }
+        
+        .diesel-tank{
+            bottom:.9rem;
+            left: 1.6rem;
+            height: 15.5rem;
+            width: 10.1rem;
+            ion-text{
+                left:1rem;
+                bottom: 3.5rem;
+
+                h4,h3{
+                    margin: 0;
+                }
+                h4{
+                    font-size: 1.2rem;
+                }
+                h3{
+                    font-size: 2rem;
+                }
+            }
+            
+        }
+         .tank-level-container{
+             height: calc(100% - 0.7rem);
+
+             span{
+                 &:before{
+                     height: 1rem;
+                 }
+             }
+         }
+    }
+}

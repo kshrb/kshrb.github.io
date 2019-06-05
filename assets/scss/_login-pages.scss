@@ -1,0 +1,278 @@
+//@import '../../../theme/mixin.scss';
+@import 'src/theme/mixin';
+@import 'src/assets/scss/footer-popup';
+
+main {
+    padding-bottom: 4rem;
+    overflow: auto;
+    justify-content: space-evenly;
+    z-index: 2;
+    position: relative;
+
+    //styles for the anhor tag
+    .link-primary-light {
+        color: var(--light-red);
+        display: inherit;
+        font-size: 1.4rem;
+        margin: 1.5rem 0;
+    }
+
+    //styles for the  ion-card
+    .form-card {
+        --background: var(--ion-color-light);
+        --color: var(--title-color);
+        @include border-radius(2rem);
+        @include shadow(var(--shadow-general));
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        font-size: 1.5rem;
+
+        ion-card-header{
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+            ion-card-title{
+                --color: var(--ion-color-dark);
+                color: var(--ion-color-dark);
+                font-size: 1.5rem;                
+                min-height: 3.6rem;                
+                margin: auto;
+
+                &.title-md {
+                    font-size: 2.2rem;
+                    font-family: var(--semi-bold);
+                }
+            }
+
+            ion-avatar {
+                width: 12.4rem;
+                height: 12.4rem;
+                margin: -8.2rem auto 1rem;
+                position:relative;
+
+
+                ion-img{
+                    width: 100%;
+                    min-height: 100%;
+                    display: block;
+                    border-radius: 50%;
+                }
+
+                &[class^="avatar-user"]{
+                    width: 10.2rem;
+                    height: 10.2rem;
+                    margin: -7.1rem auto 1rem;
+                    background:var(--ion-color-light);
+                    border-radius: 50%;
+                    border: 0.5rem solid var(--light-gray);
+                    padding:0.1rem;
+                    ion-img{
+                        @include shadow(var(--shadow-general));
+                    }
+                }
+
+                &.avatar-user-md{
+                    width: 13.4rem;
+                    height: 13.4rem;
+                    margin: -8.7rem auto 1rem;
+                }
+
+                .upload-profile {
+                    position: absolute;
+                    bottom: 0;
+                    right:  0;
+                    width: 2.9rem;
+                    height: 2.9rem;
+                    --border-color : var(--light-red);
+                    --border-style : solid;
+                    --border-width : 0.1rem;
+                    --box-shadow : none;
+                    --padding-start :0;
+                    --padding-end :0;
+                    --padding-top :0;
+                    --padding-bottom:0;
+            
+                    ion-icon {
+                        font-size: 1.5rem;
+                        color:var(--light-red);
+                        position: absolute;
+                        pointer-events: none;
+                    }
+                    ion-input[type="file"]{
+                        width: 100%;
+                        height: 100%;
+                        opacity:0;
+                    }
+                }
+            }
+
+        }
+        ion-card-subtitle{
+            color: var(--label-grey);
+            font-size: 1.5rem;
+        }
+
+        ion-card-content {
+            padding: 1rem 3rem 6rem;
+            position: relative;
+            margin: auto;
+            width: 30rem;
+            flex: 1 1 auto;
+
+            ion-item {
+                --inner-padding-start: 0;
+                --inner-padding-end: 0;
+                --inner-padding-top: 0;
+                --inner-padding-bottom: 0;
+                --padding-start: 0;
+                --padding-end: 0;
+                --padding-top: 0;
+                --padding-bottom: 0;
+               // --border-color: rgba(var(--border-gray),0.2);
+                --highlight-height: 0.1rem;
+                --highlight-color-focused:var(--border-gray);
+
+                
+                --background-focused: inherit;
+
+                //styles for text type input
+                &.controls-group {
+                    --padding-top: 1.5rem;
+
+                    ion-input,
+                    ion-datetime {
+                        font-size: 1.5rem;
+                        --color: var(--title-color);
+                        --placeholder-color: var(--title-color);
+                        --placeholder-opacity: 1;
+                        --padding-start: 0;
+                        --padding-end: 0;
+                        --padding-top: 0;
+                        --padding-bottom: 0;
+                    }
+                }
+
+                //styles for checkbox
+                &.checkbox {
+                    --border-width: 0;
+
+                    ion-checkbox {
+                        --border-color: var(--light-red);
+                        --border-color-checked:var(--light-red);
+                        --size: 2rem;
+                        -webkit-margin-end: 1rem;
+                        margin-inline-end: 1rem; 
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+                }
+                ion-label{                    
+                    color: var(--label-grey);                    
+                }
+                ion-datetime + ion-icon{
+                    font-size: 2rem;
+                    pointer-events: none;
+                    color: var(--ion-color-primary);
+                    position: absolute;
+                    right: 0;
+                    bottom: 0.8rem;
+                    z-index:3;
+                }
+            }
+
+            .footer-btn {
+                min-width: 11.4rem;
+                width: auto;
+                height: 3.5rem;
+                font-size: 1.3rem;
+                font-family: var(--medium);
+                line-height: normal;
+                letter-spacing: 0.01rem;
+                text-align: center;
+                color: var(--ion-color-light);
+                margin: 0 auto;
+                border: 0.15rem solid var(--light-red);
+                border-bottom: none;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                @include transform(translateX(-50%));
+                @include border-radius(2rem 2rem 0 0);
+                --border-radius: 2rem 2rem 0 0;
+                background: var(--light-red);
+                --background: var(--light-red);
+            }
+            //media queries for ion-card-content
+            @include bp(sm) {
+                padding: 0 3rem 4rem;
+            }
+            &.padding-v-xtra {
+                padding-top: 3rem;
+                padding-bottom: 12rem;
+
+                @include bp(xs-landscape) {
+                    padding-top: 2rem;
+                    padding-bottom: 6rem;
+
+                    .controls-group {
+                        --padding-top: 0;
+                    }
+
+                }
+            }
+
+        }
+        
+        &.card-style-2{
+            margin-top: 6.2rem;
+            @include bp(xs-landscape) {
+                margin-top: 7.2rem;
+               ion-card-header {
+                    padding: 1.6rem 1.5rem 0;
+                }
+
+            }
+        }
+
+        &.card-bg{
+            background: url(src/assets/images/card-bg.png) right bottom no-repeat;
+            margin-bottom: 4rem;
+            ion-card-content{
+                padding: 1rem 3rem 7.2rem;
+            }
+        }
+        &.card-no-header{
+            margin-top: 2rem;
+        }
+
+
+        //styles for the set of inputs for the pin digits
+        .input-set{
+            .label-common{
+                @include transform(none);
+                font-size: 1.2rem;
+            }
+            ion-item{
+                flex-grow: 1;
+                --min-height: 30px;
+                &+ion-item{
+                    --padding-start: 0.8rem !important;
+                }
+            }
+        }
+    }
+
+    //mediaqueries for main section
+          
+    @include bp(xs-landscape){
+        justify-content: flex-start;
+    }
+
+    @include bp(sm) {
+        justify-content: flex-start;
+    }
+
+    @include bp(md) {
+        justify-content: space-evenly;
+    }
+}

@@ -1,0 +1,647 @@
+@import 'src/theme/mixin';
+
+
+
+.map-view {
+  //min-height: 20rem;
+  position: relative;
+  border: 0.01rem solid var(--light-grey);
+  border-radius: 0 0 3rem 3rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  @include box-shadow(0, .96rem, 1.04rem, rgba(0, 0, 0, 0.13));
+
+
+  .btn-custom {
+    position: absolute;
+    overflow: hidden;
+    font-family: var(--medium);
+    font-size: 1.3rem;
+
+    &.btn-left-bottom {
+      left: 0;
+      bottom: 0;
+      --border-radius: 0 3rem 0 3rem;
+      overflow: hidden;
+      min-width: 10.1rem;
+    }
+
+    &.btn-right-bottom {
+      right: 0;
+      bottom: 0;
+      --border-radius: 3rem 0 3rem 0;
+      min-width: 10.1rem;
+    }
+
+    &.btn-right-top {
+      right: 0;
+      top: 0;
+      --border-radius: 0 0 0 1.5rem;
+      min-width: 1.8rem;
+      font-size: 1rem;
+      line-height: 1.2rem;
+      height: 2.8rem;
+    }
+    &.btn-left-top {
+      left: 0;
+      top: 0;
+      --border-radius: 0 0  1.5rem 0;
+      font-size: 1rem;
+      line-height: 1.2rem;
+      height: 2.8rem;
+      min-width: 8rem;
+    }
+  }
+}
+
+
+
+
+.tractor-usage-data {
+
+  ion-grid{
+    --ion-grid-padding: 0;
+  }
+
+  .btn-styled {
+    position: relative;
+    --background: var(--light-grey);
+    --background-activated: var(--light-grey);
+    --background-focused: var(--light-grey);
+    --color: var(--ion-color-dark);
+    --color-focused: var(--ion-color-dark);
+    --color-activated: var(--ion-color-dark);
+    --border-radius: 2rem;
+    min-width: 9.3rem;
+    display: inline-block;
+    margin: 0.5rem auto;
+    --box-shadow: none;
+
+    .background-wrap {
+      --border-radius: 2rem;
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+      z-index: 0;
+      background: var(--light-grey) url(/../assets/images/wave1.png) center bottom no-repeat;
+      background-size: 100%;
+      bottom:0;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        z-index: 0;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+    &.btn-waved {
+      .background-wrap {
+        height: 44%;
+
+        &:after {
+          content: "";
+          background: url('/../assets/images/wave-pattern-grey.png') left bottom;
+          background-repeat: repeat-x;
+          background-size: contain;
+          height: 80%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          opacity: 0.4;
+
+          animation: slide 20s linear infinite;
+          -webkit-animation: slide 20s linear infinite;
+
+          @keyframes slide {
+            from {
+              background-position: 0 0;
+            }
+
+            to {
+              background-position: -700px 0;
+            }
+          }
+
+          @-webkit-keyframes slide {
+            from {
+              background-position: 0 0;
+            }
+
+            to {
+              background-position: -700px 0;
+            }
+          }
+
+          @include bp(md) {
+            @keyframes slide {
+              from {
+                background-position: 0 0;
+              }
+
+              to {
+                background-position: -1500px 0;
+              }
+            }
+
+            @-webkit-keyframes slide {
+              from {
+                background-position: 0 0;
+              }
+
+              to {
+                background-position: -1500px 0;
+              }
+            }
+          }
+        }
+
+        &:before {
+          background: url(/../assets/images/wave2.png) no-repeat;
+          background-size: cover;
+        }
+      }
+
+    }
+
+    &.btn-rippled {
+      .background-wrap {
+        background: var(--ion-color-success-tint);
+        height: 80%;
+        bottom: 0;
+        border-radius: 2rem;
+        animation: topLayer 1s 0s linear infinite alternate;
+        -webkit-animation: topLayer 1s 0s linear infinite alternate;
+
+        &:before {
+          background: var(--ion-color-success-shade);
+          height: 60%;
+          bottom: 0;
+          border-radius: 2rem;
+          z-index: 0;
+          animation: middleLayer 1s 0.25s linear infinite alternate;
+          -webkit-animation: middleLayer 1s 0.25s linear infinite alternate;
+        }
+
+        &:after {
+          background: var(--ion-color-success);
+          height: 40%;
+          bottom: 0;
+          border-radius: 2rem;
+          z-index: 1;
+          animation: bottomLayer 1s 0.5s linear infinite alternate;
+          -webkit-animation: bottomLayer 1s 0.5s linear infinite alternate;
+        }
+      }
+
+      @keyframes bottomLayer {
+
+        to {
+          height: 60%;
+        }
+      }
+
+      @-webkit-keyframes bottomLayer {
+
+        to {
+          height: 60%;
+        }
+      }
+      @keyframes middleLayer {
+
+        to {
+          height: 80%
+        }
+      }
+
+      @-webkit-keyframes middleLayer {
+
+        to {
+          height: 80%
+        }
+      }
+
+      @keyframes topLayer {
+
+        to {
+          height: 100%;
+        }
+      }
+
+      @-webkit-keyframes topLayer {
+
+        to {
+          height: 100%;
+        }
+      }
+
+    }
+
+
+    //styles for the right arrow
+    &:before{
+      position: absolute;
+      content: "";
+      width: 3rem;
+      height: 3rem;
+      background: var(--ion-color-light) url(/assets/svg-icons/ios-arrow.svg) center center no-repeat;
+      background-size: 1.5rem 1rem;
+      border-radius: 50%;
+      box-shadow: 0px 14.5px 20.7px 1.3px rgba(0, 0, 0, 0.24);
+      top: 50%;
+      transform: translateY(-50%);
+      right: -1.5rem;
+      z-index: 4;
+    }
+
+  }
+
+  ion-button {
+    font-size: 1rem;
+    font-weight: 400;
+    --box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    min-height: 5rem;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+    font-family: var(--semi-bold);
+
+    ion-icon {
+      font-size: 2.5rem;
+      color: var(--icon-color);
+
+      &.arrow-icon {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        @include transform(translatey(-50%));
+        font-size: 1.6rem;
+        color: var(--ion-color-primary);
+      }
+    }
+
+    .btn-data {
+      position: relative;
+      z-index: 2;
+      padding: 0 0.55rem;
+
+      strong {
+        display: block;
+        font-size: 1.4rem;
+        margin-top: .3rem;
+      }
+    }
+
+    @include bp(md) {
+      min-height: 6.5rem;
+      font-size: 1.4rem;
+
+      ion-icon {
+        font-size: 3rem;
+      }
+
+      .btn-data {
+        strong {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.usage-date-container {
+  .inner-content {
+    padding: 1.2rem 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    @include border-radius(4.5rem);
+
+    @include bp(xxs) {
+      padding: 1.2rem 2rem;
+    }
+  }
+
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  width: 100%;
+  top:2rem;
+
+  @include bp(xs) {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .usage-date {
+    padding-right: 1rem;
+    margin-right: 1.5rem;
+    border-right: 1px solid var(--dark-grey);
+
+    ion-select {
+      padding: 0;
+      font-size: 1.4rem;
+      font-weight: 400;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    @include bp(md) {
+      ion-select {
+        font-size: 1.6rem;
+      }
+    }
+
+    @include bp(xxs) {
+      padding-right: 1rem;
+    }
+  }
+
+  .temperature-status {
+    ion-chip {
+      margin: 0;
+      padding: 0;
+      background: var(--transparent);
+      font-size: 1.4rem;
+      font-weight: 400;
+      height: auto;
+      overflow: visible;
+      text-transform: capitalize;
+      @include border-radius(0);
+
+      img {
+        margin-right: 0.5rem;
+        height: 1.5rem;
+        display: block;
+        margin-top: -0.6rem;
+      }
+
+      @include bp(md) {
+        font-size: 1.6rem;
+
+        img {
+          height: 2.7rem;
+        }
+      }
+    }
+  }
+}
+
+.locate-me-btn {
+  text-align: center;
+
+  ion-fab-button {
+    margin: 0 auto;
+    height: 4.5rem;
+    width: 4.5rem;
+
+    ion-icon {
+      font-size: 2.2rem;
+    }
+  }
+
+  ion-label {
+    display: block;
+    color: var(--ion-color-primary-contrast);
+    font-size: 1rem;
+    @include text-shadow(0, 3px, 5px, rgba(0, 0, 0, 0.5));
+    margin-top: .2rem;
+  }
+
+  @include bp(md) {
+    ion-label {
+      font-size: 1.4rem;
+    }
+
+    ion-fab-button {
+      height: 5.5rem;
+      width: 5.5rem;
+
+      ion-icon {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}
+
+.geofence-btn-wrapper {
+  margin-top: -4rem;
+  margin-bottom: 2rem;
+
+  ion-button {
+    --box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.tractor-data-links {
+  padding: 2rem 0 2rem 0;
+  background: var(--grey);
+
+  @include bp(xs) {
+    padding: 2rem 1.6rem;
+  }
+}
+
+.bottom-nav {
+  ion-button {
+    flex-flow: column wrap;
+
+    .button-inner {
+      flex-flow: column wrap;
+    }
+
+    span {
+      display: block;
+    }
+  }
+}
+
+.tractor-usage {
+  padding: 1.6rem 0;
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .tu-date {
+    margin-right: 1.6rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  ion-select,
+  .select-text {
+    padding: 0;
+    font-size: 1.3rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    ion-icon {
+      font-size: 2.2rem;
+      color: #ababab;
+    }
+
+  }
+}
+
+.select-text {
+  cursor: pointer;
+}
+
+
+.all-day-summary {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  min-width:19.4rem;
+  box-shadow: 0 0.95rem 1.04rem 0.16rem rgba(0, 0, 0, 0.13);
+  @include box-shadow(0, 0, 16px, rgba(0, 0, 0, 0.2));
+  @include border-radius(2rem 2rem 0 0);
+  @include transform(translateX(-50%));
+  background: rgba(255, 255, 255, 0.92);
+
+  ion-list {
+    padding: 0 0 2rem;
+    margin: 0;
+    min-height: 0;
+    @include border-radius(2rem 2rem 0 0);
+    background: transparent;
+
+    ion-list-header {
+      min-height: 0;
+      font-family: var(--semi-bold);
+      font-size: 1.4rem;
+      text-transform: capitalize;
+      letter-spacing: normal;
+      color: var(--dark-shade-black);
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-align: center;
+
+      &:before{
+        content: "";
+        background: rgba(251,196,94,0.2);
+        position: absolute;
+        bottom: 0;
+        height: 0.5rem;
+        left: 0;
+        right: 0;
+        border-radius: 0 0 30% 30%;
+        height: 120%;
+
+      }
+    }
+
+    ion-item {
+      --min-height: 0;
+      --inner-border-width: 0;
+      --border-style: none;
+      --border-color: var(--transparent);
+      --background: var(--transparent);
+      --padding-start: 0;
+      --inner-padding-end: 0;
+      --ion-safe-area-right: 0;
+      font-size: 1.2rem;
+      padding: 1rem 1.2rem 0;
+      font-weight: 500;
+
+      ion-icon {
+        font-size: 2rem;
+      /*   margin-right: 1rem; */
+      }
+
+      .unit {
+        font-size: 1.6rem;
+        font-family: var(--bold);
+        min-width: 6.5rem;
+        padding-left: 1rem;
+        text-align: right;
+
+        small {
+          font-size:75%;
+        }
+      }
+
+      ion-label {
+        margin: 0;
+        font-family: var(--semi-bold);
+        font-size: 1.1rem;
+        position: relative;
+        padding-left: 1rem;
+
+        &:before{
+          background: var(--ion-color-secondary-shade);
+          content: "";
+          position: absolute;
+          @include border-radius(50%);
+          left: 0;
+          width: 0.4rem;
+          height: 0.4rem;
+          top: 50%;
+          @include transform(translateY(-50%));
+
+        } 
+        &:after{
+          background: var(--ion-color-dark);
+          width: 0.6rem;
+          height: 0.15rem;
+          opacity: 0.3;
+          border-radius: 0.08rem;
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          @include transform(translateY(-50%));
+          @include transform(translateX(-50%));
+
+        }
+      }
+    }
+  }
+
+
+  @include bp(md) {
+    width: 40rem;
+    left: 50%;
+    right: auto;
+    @include transform(translatex(-50%));
+  }
+
+
+
+  &.type-b{
+    min-width: 27rem;
+
+    .top-right{
+      position: absolute;
+      top:-2rem;
+      right: -2rem;
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+    ion-label {
+      &:after{
+        display: none;
+      }
+
+    }
+    .unit {
+      min-width: 8rem;
+    }
+  }
+}
