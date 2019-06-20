@@ -1796,7 +1796,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
         // The SW does not have a clean installation of the latest version of the app, but older
         // cached versions are safe to use so long as they don't try to fetch new dependencies.
         // This is a degraded state.
-        DriverReadyState[DriverReadyState["EXISTING_CLIENTS_ONLY"] = 1] = "EXISTING_CLIENTS_ONLY";
+        // DriverReadyState[DriverReadyState["EXISTING_CLIENTS_ONLY"] = 1] = "EXISTING_CLIENTS_ONLY";
         // The SW has decided that caching is completely unreliable, and is forgoing request
         // handling until the next restart.
         DriverReadyState[DriverReadyState["SAFE_MODE"] = 2] = "SAFE_MODE";
@@ -2422,7 +2422,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
                     // The latest manifest is broken. This means that new clients are at the mercy of the
                     // network, but caches continue to be valid for previous versions. This is
                     // unfortunate but unavoidable.
-                    this.state = DriverReadyState.EXISTING_CLIENTS_ONLY;
+                    //this.state = DriverReadyState.EXISTING_CLIENTS_ONLY;
                     this.stateMessage = `Degraded due to: ${errorToString(err)}`;
                     // Cancel the binding for these clients.
                     Array.from(this.clientVersionMap.keys())
@@ -2488,7 +2488,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
                 }
                 catch (err) {
                     this.debugger.log(err, `Error occurred while updating to manifest ${hash}`);
-                    this.state = DriverReadyState.EXISTING_CLIENTS_ONLY;
+                    // this.state = DriverReadyState.EXISTING_CLIENTS_ONLY;
                     this.stateMessage = `Degraded due to failed initialization: ${errorToString(err)}`;
                     return false;
                 }
