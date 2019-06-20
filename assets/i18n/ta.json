@@ -102,7 +102,7 @@
     "AVERAGE-ENGINE-RPM": "சராசரி எஞ்சின் RPM",
     "ENGINE-HOURS": "இயந்திர நேரம்",
     "TODAYS-ENGINE-HOURS": "இன்று இயந்திரம் மணி",
-    "CUMULATIVE-ENGINE": "குவிவு இயந்திரம் மணி",
+    "CUMULATIVE-ENGINE-HOURS": "குவிவு இயந்திரம் மணி",
     "PTO-HOURS": "இன்று PTO மணி",
     "TRACTOR-SERVICE": "டிராக்டர் சர்வீஸ் செல்ல_________நேரம் உள்ளது",
     "BOOK-SERVICING": "சர்வீஸ் புக் செய்யவும்",
@@ -223,5 +223,7 @@
     "CURRENT-LOCATION-OF-TRACTOR":"டிராக்டரின் தற்போதைய இடம் கிடைக்கவில்லை",
     "LOCATION_NOT_AVAILABLE": "இடம் கிடைக்கவில்லை",
     "LOADING": "தயவுசெய்து காத்திருங்கள்",
-    "PROFILE-UPDATE-SUCCESSFULLY":"சுயவிவர புதுப்பிப்பு வெற்றிகரமாக"
+    "PROFILE-UPDATE-SUCCESSFULLY":"சுயவிவர புதுப்பிப்பு வெற்றிகரமாக",
+    "GEOLOCATION-NOT-SUPPORTED":" Geolocation is not supported by your browser",
+    "IMAGE-SELECTER":"Only support jpeg And png "
 }

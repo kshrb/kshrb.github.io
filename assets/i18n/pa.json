@@ -7,7 +7,7 @@
     "ENGINE-HOURS": "ਇੰਜਣ ਘੰਟੇ",
     "DIESEL-LEVEL": "ਡੀਜ਼ਲ ਪੱਧਰ",
     "TODAYS-ENGINE-HOURS": "ਅੱਜ ਦੇ ਇੰਜਣ ਘੰਟੇ",
-    "CUMULATIVE-ENGINE": "ਸੰਚਤ ਇੰਜਨ ਘੰਟੇ",
+    "CUMULATIVE-ENGINE-HOURS": "ਸੰਚਤ ਇੰਜਨ ਘੰਟੇ",
     "PTO-HOURS": "ਪੀਟੀਓ ਘੰਟੇ",
     "TRACTOR-SERVICE": "ਟਰੈਕਟਰ ਸੇਵਾ ਦੇ ਕਾਰਨ",
     "BOOK-SERVICING": "ਬੁਕ ਸਰਵਿਸਿੰਗ",
@@ -219,7 +219,9 @@
     "OR": "ਜਾਂ",
     "CURRENT-LOCATION-OF-TRACTOR":"ਟਰੈਕਟਰ ਦੀ ਮੌਜੂਦਾ ਸਥਿਤੀ ਉਪਲਬਧ ਨਹੀਂ ਹੈ",
     "LOCATION_NOT_AVAILABLE": "ਸਥਾਨ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ",
-    "LOADING": "ਕ੍ਰਿਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ"
+    "LOADING": "ਕ੍ਰਿਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ",
+    "GEOLOCATION-NOT-SUPPORTED":" Geolocation is not supported by your browser",
+    "IMAGE-SELECTER":"Only support jpeg And png "
 
     
 }

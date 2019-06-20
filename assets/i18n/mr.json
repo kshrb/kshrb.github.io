@@ -223,5 +223,7 @@
     "CURRENT-LOCATION-OF-TRACTOR":"ट्रॅक्टरचे वर्तमान स्थान उपलब्ध नाही",
     "LOCATION_NOT_AVAILABLE": "स्थान उपलब्ध नाही",
     "LOADING": "कृपया थांबा",
-    "PROFILE-UPDATE-SUCCESSFULLY":"प्रोफाइल अद्यतन यशस्वीरित्या"
+    "PROFILE-UPDATE-SUCCESSFULLY":"प्रोफाइल अद्यतन यशस्वीरित्या",
+    "GEOLOCATION-NOT-SUPPORTED":" Geolocation is not supported by your browser",
+    "IMAGE-SELECTER":"Only support jpeg And png "
 }

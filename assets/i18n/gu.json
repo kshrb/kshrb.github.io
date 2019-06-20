@@ -7,7 +7,7 @@
     "ENGINE-HOURS": "એન્જીન અવર્સ",
     "DIESEL-LEVEL": "ડીઝલ સ્તર",
     "TODAYS-ENGINE-HOURS": "આજે એન્જિનના કલાકો",
-    "CUMULATIVE-ENGINE": "ક્યુમ્યુલેટિવ એન્જિન કલાક",
+    "CUMULATIVE-ENGINE-HOURS": "ક્યુમ્યુલેટિવ એન્જિન કલાક",
     "PTO-HOURS": "પીટીઓ કલાક",
     "TRACTOR-SERVICE": "ટ્રેક્ટર સેવા આવશ્યક છે",
     "BOOK-SERVICING": "બુક સર્વિસિંગ",
@@ -220,5 +220,7 @@
     "CURRENT-LOCATION-OF-TRACTOR":"ટ્રેક્ટરનું વર્તમાન સ્થાન ઉપલબ્ધ નથી",
     "LOCATION_NOT_AVAILABLE": "સ્થાન ઉપલબ્ધ નથી",
     "LOADING": "મહેરબાની કરી રાહ જુવો",
-    "PROFILE-UPDATE-SUCCESSFULLY":"પ્રોફાઇલ અપડેટ સફળતાપૂર્વક"
+    "PROFILE-UPDATE-SUCCESSFULLY":"પ્રોફાઇલ અપડેટ સફળતાપૂર્વક",
+    "GEOLOCATION-NOT-SUPPORTED":" Geolocation is not supported by your browser",
+    "IMAGE-SELECTER":"Only support jpeg And png "
 }

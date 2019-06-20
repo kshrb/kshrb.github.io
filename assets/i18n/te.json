@@ -101,7 +101,7 @@
     "FIELD-WORK": "పొలం పని",
     "AVERAGE-ENGINE-RPM": "సగటు ఇంజిన్ RPM",
     "TODAYS-ENGINE-HOURS": "నేటి ఇంజిన్ గంటల",
-    "CUMULATIVE-ENGINE": "సంచిత ఇంజిన్ గంటల",
+    "CUMULATIVE-ENGINE-HOURS": "సంచిత ఇంజిన్ గంటల",
     "PTO-HOURS": "నేటి PTO గంటలు",
     "TRACTOR-SERVICE": "కారణంగా ట్రాక్టర్ సేవ",
     "BOOK-SERVICING": "బుక్ సర్వీసింగ్",
@@ -224,5 +224,7 @@
     "CURRENT-LOCATION-OF-TRACTOR":"ట్రాక్టర్ యొక్క ప్రస్తుత స్థానం అందుబాటులో లేదు",
     "LOCATION_NOT_AVAILABLE": "స్థానం అందుబాటులో లేదు",
     "LOADING": "దయచేసి వేచి ఉండండి",
-    "PROFILE-UPDATE-SUCCESSFULLY":"ప్రొఫైల్ నవీకరణ విజయవంతంగా"
+    "PROFILE-UPDATE-SUCCESSFULLY":"ప్రొఫైల్ నవీకరణ విజయవంతంగా",
+    "GEOLOCATION-NOT-SUPPORTED":" Geolocation is not supported by your browser",
+    "IMAGE-SELECTER":"Only support jpeg And png "
 }
