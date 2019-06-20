@@ -46,6 +46,19 @@
 }
 
 
+//font files for coachmarks
+@font-face {
+  font-family: 'SketchRockwell';
+  src: url('src/assets/fonts/SketchRockwell.eot');
+  src: url('src/assets/fonts/SketchRockwell.eot?#iefix') format('embedded-opentype'),
+    url('src/assets/fonts/SketchRockwell.svg#SketchRockwell') format('svg'),
+    url('src/assets/fonts/SketchRockwell.ttf') format('truetype'),
+    url('src/assets/fonts/SketchRockwell.woff') format('woff'),
+    url('src/assets/fonts/SketchRockwell.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 // Global SCSS
 html,
@@ -152,7 +165,8 @@ ion-button {
   font-size: 1.1rem !important;
   --color: var(--label-grey);
   color: var(--label-grey);
-  &.label-stacked{    
+
+  &.label-stacked {
     transform: none !important;
   }
 }
@@ -165,8 +179,10 @@ ion-button {
   color: var(--label-grey);
   min-height: 2rem;
 }
+
 //styles for the customized select picker
 [select-style] {
+
   ion-select,
   .select-picker {
     font-size: 1.4rem;
@@ -189,65 +205,64 @@ ion-button {
 
 
 ion-header {
-  background-color:var(--white);
+  background-color: var(--white);
 
-//styles for the header of home and Tractor usage pages
-    &.header {
-      background: url(src/assets/images/header-bg1.png) right top no-repeat;
-      background-size: auto 13rem;
-      background-color:var(--white);
-      z-index: 0;
+  //styles for the header of home and Tractor usage pages
+  &.header {
+    background: url(src/assets/images/header-bg1.png) right top no-repeat;
+    background-size: auto 13rem;
+    background-color: var(--white);
+    z-index: 0;
 
-      @include bp(xs) {
-        background-size: auto 11.57rem;
-      }
-      @include bp(xxs) {
+    @include bp(xs) {
+      background-size: auto 11.57rem;
+    }
+
+    @include bp(xxs) {
       background-size: auto 12.46rem;
-      }
-      @include bp(xs-landscape) 
-      {
-        background-size: auto 12.8rem;
-      }
-      
-      .logo{
-          width: 13.3rem;
-      }
+    }
 
-      ion-icon {
-        font-size: 1.5rem;
-      }
+    @include bp(xs-landscape) {
+      background-size: auto 12.8rem;
+    }
 
-      ion-toolbar {
-        --background: transparent;
-        @extend %ion-padding-lr-3;
-        @extend %ion-padding-reset-tb;
+    .logo {
+      width: 13.3rem;
+    }
 
-        .btns-toolbar{
-          ion-fab-button,
-          ion-menu-button{    
-              font-size: 1.5rem;
-              width: 3.25rem;
-              height: 3.25rem;
-              margin-left: 0.825rem;
-              color: var(--ion-color-primary);
-              --box-shadow: var(--btn-shadow);
-              --padding-start: 1rem;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-          }
-          
-          ion-menu-button{     
-              background: var(--ion-color-light);
-              border-radius: 50%;
-              @include shadow(var(--btn-shadow));
-              --padding-start: 1rem;
+    ion-icon {
+      font-size: 1.5rem;
+    }
 
-          }
+    ion-toolbar {
+      --background: transparent;
+      @extend %ion-padding-lr-3;
+      @extend %ion-padding-reset-tb;
 
+      .btns-toolbar {
+
+        ion-fab-button,
+        ion-menu-button {
+          margin-left: 0.825rem;
+          color: var(--ion-color-primary);
+          --box-shadow: var(--btn-shadow);
+          --padding-start: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @extend %ion-fab-button-light;
+        }
+
+        ion-menu-button {
+          background: var(--ion-color-light);
+          border-radius: 50%;
+          @include shadow(var(--btn-shadow));
+          --padding-start: 1rem;
         }
 
       }
+
+    }
 
   }
 
@@ -262,7 +277,8 @@ ion-header {
       height: 3.2rem;
     }
   }
-//styles for the header of inner pages
+
+  //styles for the header of inner pages
   &.custom-header {
     background: url(/assets/images/secondary-header-bg.png) right top no-repeat;
     background-size: contain;
@@ -271,7 +287,7 @@ ion-header {
     padding-top: 2rem;
 
     ion-toolbar {
-     @extend %ion-reset-padding;
+      @extend %ion-reset-padding;
       --min-height: 5rem;
       --border-width: 0;
 
@@ -307,7 +323,7 @@ ion-header {
         padding-inline-start: 0;
         -webkit-padding-end: 1.2rem;
         padding-inline-end: 1.2rem;
-		text-transform: capitalize;
+        text-transform: capitalize;
       }
 
       ion-icon {
@@ -315,177 +331,219 @@ ion-header {
       }
     }
 
-    &:after{
+    &:after {
       content: "";
       display: none;
     }
   }
-  
+
 
 }
 
 .secondary {
-  padding:0 3rem 0.5rem;
+  padding: 0 3rem 0.5rem;
   @include shadow(var(--shadow-header));
   align-items: flex-end;
 
-  @include bp(xs){
+  @include bp(xs) {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  @include bp(xs-landscape){
-      flex-direction: row;      
-      align-items: flex-end;
+  @include bp(xs-landscape) {
+    flex-direction: row;
+    align-items: flex-end;
 
-      >ion-item{
-        width: 25%;
-      }
+    >ion-item {
+      width: 25%;
+    }
   }
-  ion-item {
-      @extend %ion-reset-inner-padding;
-      @extend %ion-reset-padding;
-      --background: transparent;
-      --min-height: 1rem;
-      min-width:14.15rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
 
-      ion-select {
-          @extend %ion-reset-padding;
-          max-width: none;
+  ion-item {
+    @extend %ion-reset-inner-padding;
+    @extend %ion-reset-padding;
+    --background: transparent;
+    --min-height: 1rem;
+    min-width: 14.15rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    ion-select {
+      @extend %ion-reset-padding;
+      max-width: none;
+    }
+
+    ion-label {
+      margin-top: 0;
+      color: var(--label-grey);
+      min-height: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .weather-data {
+    width: 100%;
+
+    .weather-wrapper {
+      align-items: center;
+
+      .weather {
+        flex-direction: column;
+
+        @include bp(sm) {
+          flex-direction: row;
+        }
+
+        @include bp(xs-landscape) {
+          flex-direction: row;
+        }
+
+        .label-data {
+          align-items: flex-start;
+          min-width: 12rem;
+
+          @include bp(xs) {
+            align-items: center;
+            padding-left: 0;
+          }
+
+          @include bp(xs-landscape) {
+            align-items: flex-start;
+          }
+        }
+
+        .ion-wrapper {
+          width: 10rem;
+          text-align: center;
+
+          .weather-icon {
+            height: 4.25rem;
+            display: inline-block;
+          }
+
+          @include bp(sm) {
+            text-align: right;
+          }
+
+          @include bp(xs-landscape) {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    ion-header & {
+      @include bp(xs-landscape) {
+        width: auto;
+        margin-left: 2rem;
+      }
+
+      @include bp(sm) {
+        width: auto;
+        margin-left: 2rem;
+      }
+
+      .weather-wrapper {
+        margin-top: -3rem;
+        margin-bottom: 0.5rem;
+        align-items: flex-end;
+        min-height: 8.4rem;
+      }
+    }
+  }
+
+  //secondary bar styles i the tractor page
+  &.secondary-items {
+    padding: 0 3rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    //styles for the immediate children of secondary bar(ion-item/div)
+    >* {
+      --min-height: 0;
+      width: 14.1rem;
+
+      &:first-child {
+        margin-right: 50%;
+      }
+
+      &.select-date {
+        min-width: 12.6rem;
+        width: 12.6rem;
+      }
+
+      &.select-text {
+        margin-top: 1rem;
+
+        ion-label+ion-item {
+          margin-top: 0;
+        }
       }
 
       ion-label {
-          margin-top: 0;
-          color: var(--label-grey);
-          min-height: 0;
-          margin-bottom: 0;
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        --color: var(--label-grey);
+        color: var(--label-grey);
+        min-height: 0;
       }
     }
 
-    .weather-data{    
-           width: 100%; 
-          .weather-wrapper{
-                  align-items: center;            
-                  .weather{       
-                      flex-direction: column;
-                      @include bp(sm){     
-                        flex-direction: row;
-                      }
-                      @include bp(xs-landscape){       
-                        flex-direction: row;
-                      }
+    //media queries for the secondary bar flex layout
+    @include bp(sm) {
+      justify-content: flex-start;
 
-                    .label-data {        
-                        align-items: flex-start;
-                        min-width:12rem;
-                        @include bp(xs){     
-                          align-items: center;
-                          padding-left:0;
-                      }
-                      @include bp(xs-landscape){  
-                        align-items: flex-start;
-                      }      
-                    }
-                    .weather-icon {
-                        height: 4.25rem;
-                    }  
-                  }
-            }
-            ion-header &{
-              @include bp(xs-landscape){         
-                  width: auto;      
-                  margin-left: 2rem;
-              }
-              @include bp(sm){         
-                  width: auto;      
-                  margin-left: 2rem;
-              }
-              .weather-wrapper {
-                    margin-top: -3rem;
-                    margin-bottom: 0.5rem;
-                    align-items: flex-end;
-                    min-height: 8.4rem;
-              }
-            }
+      >* {
+
+        &,
+        &:first-child {
+          margin-right: 3rem;
+        }
+      }
     }
 
-    //secondary bar styles i the tractor page
-    &.secondary-items {
-      padding: 0 3rem;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    @include bp(xxs) {
+      >* {
 
-      //styles for the immediate children of secondary bar(ion-item/div)
-        >*{    
-          --min-height :0;
-          width: 14.1rem;      
+        &,
+        & ion-item {
+          min-width: 12rem;
+          width: 12rem;
+        }
 
-          &:first-child{
-            margin-right: 50%;
-          }
-          &.select-date{
-            min-width: 12.6rem;
-            width: 12.6rem;
-          }      
+        &.select-date {
+          max-width: 10rem;
 
-        &.select-text{
-            margin-top: 1rem;
-            ion-label + ion-item{
-              margin-top:0;
-            }
-          }
-          ion-label{
-            margin-bottom: 0;          
-            font-size: 1.1rem;
-            --color: var(--label-grey);
-            color: var(--label-grey);
-            min-height: 0;
+          ion-label {
+            margin-bottom: 0;
           }
         }
-      //media queries for the secondary bar flex layout
-      @include bp(sm){
-        justify-content: flex-start;
-         >*{
-           &, &:first-child{
-              margin-right: 3rem;
-           }
-         }
       }
-      @include bp(xxs){
-         >*{
-            &,& ion-item {
-                min-width: 12rem;
-                width: 12rem;
-            }
-
-            &.select-date{
-              max-width: 10rem;
-              ion-label{
-                margin-bottom: 0;
-              }
-            } 
-         }
-      }
-        @include bp(xs-landscape){
-          justify-content: flex-start;
-          >*{
-            &,& ion-item {
-                min-width: 12rem;
-                width: 12rem;
-            }
-            &, &:first-child{
-                margin-right: 3rem;
-            }
-          }
-        }
     }
+
+    @include bp(xs-landscape) {
+      justify-content: flex-start;
+
+      >* {
+
+        &,
+        & ion-item {
+          min-width: 12rem;
+          width: 12rem;
+        }
+
+        &,
+        &:first-child {
+          margin-right: 3rem;
+        }
+      }
+    }
+  }
 
 }
 
-.main-content{
+.main-content {
   padding: 0 1rem;
 }
 
@@ -532,10 +590,14 @@ ion-header {
 }
 
 ion-tabs {
+  z-index: 0 !important;
+
   ion-tab-bar {
     height: 5.25rem;
     position: relative;
-    z-index: 3;
+    //z-index: 3;
+
+    z-index: 0;
     --background: transparent;
 
     ion-icon {
@@ -603,6 +665,11 @@ ion-tabs {
     background: url(src/assets/images/footer-bg.png) center no-repeat;
     pointer-events: none;
     z-index: 0;
+  }
+  &.has-coachmarks{
+    &:before{
+      opacity: 0.2;
+    }
   }
 
   .tractor-icon {
@@ -672,7 +739,7 @@ ion-fab-button {
 
     &[transcluent] {
       &:not(.primary-color) {
-       @extend %background-transparent;
+        @extend %background-transparent;
         --color: var(--dark-red);
       }
     }
@@ -829,50 +896,51 @@ ion-picker {
   bottom: 0;
 }
 
-.bottom-btns-group{
+.bottom-btns-group {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+
+  &:before {
+    content: "";
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    z-index: 10;
+    height: 9rem;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 30%, rgba(255, 255, 255, 1) 58%);
+    ;
+  }
 
-    &:before{
-      content: "";
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 9rem;
-      pointer-events: none;
-      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.7) 30%,rgba(255,255,255,1) 58%); ;
+  ion-button {
+    margin: 0 1.1rem;
+    margin-bottom: -2px;
+    height: 3.5rem;
+    --border-radius: 2rem 2rem 0 0;
+    min-width: 10.5rem;
+    --border-width: 2px;
+    --border-color: var(--ion-color-primary);
+    --border-style: solid;
+    --box-shadow: none;
+    font-size: 1.3rem;
+
+    &[lg] {
+      min-width: 19.4rem;
     }
 
-    ion-button{
-        margin: 0 1.1rem;
-        margin-bottom: -2px;
-        height: 3.5rem;
-        --border-radius: 2rem 2rem 0 0;
-        min-width: 10.5rem;
-        --border-width: 2px;
-        --border-color: var(--ion-color-primary);
-        --border-style: solid;
-        --box-shadow:none;
-        font-size: 1.3rem;
-
-        &[lg]{
-            min-width: 19.4rem;
-        }
-
-        &[secondary]{
-            --background:var(--ion-color-primary-contrast);
-            --background-activated: var(--ion-color-primary-contrast);
-            --background-focused: var(--ion-color-primary-contrast);
-            --color: var(--ion-color-primary);
-            --color-activated: var(--ion-color-primary);
-            --color-focused: var(--ion-color-primary);
-            --ripple-color:var(--ion-color-primary);
-        }
+    &[secondary] {
+      --background: var(--ion-color-primary-contrast);
+      --background-activated: var(--ion-color-primary-contrast);
+      --background-focused: var(--ion-color-primary-contrast);
+      --color: var(--ion-color-primary);
+      --color-activated: var(--ion-color-primary);
+      --color-focused: var(--ion-color-primary);
+      --ripple-color: var(--ion-color-primary);
     }
+  }
 }
 
 
@@ -880,212 +948,537 @@ ion-picker {
   height: 100%;
 
 }
-ion-popover{
-  &.custom-popover{
-    --width:15.7rem;
-    --box-shadow:var(--shadow-general);
-    --border-radius:1.5rem;
 
-    .popover-content{
+ion-popover {
+  &.custom-popover {
+    --width: 15.7rem;
+    --box-shadow: var(--shadow-general);
+    --border-radius: 1.5rem;
+
+    .popover-content {
       @include border-radius(var(--border-radius));
       margin-left: -2.5rem;
     }
   }
-  &.filter-popover{
-    --width:30rem;
-    --box-shadow:var(--shadow-general);
-    --border-radius:1.5rem;
-    .popover-content{
+
+  &.filter-popover {
+    --width: 30rem;
+    --box-shadow: var(--shadow-general);
+    --border-radius: 1.5rem;
+
+    .popover-content {
       @include border-radius(var(--border-radius));
     }
   }
 }
 
-ion-button{
-  &.button-clear{
+ion-button {
+  &.button-clear {
     --ripple-color: transparent;
   }
 
-  &.btn-img{
-    height:12.15rem;
+  &.btn-img {
+    height: 12.15rem;
     --background: var(--ion-color-light);
-    --border-color:var(--light-pink);
-    --border-radius : 1rem;
-    --box-shadow:var(--shadow-light);
+    --border-color: var(--light-pink);
+    --border-radius: 1rem;
+    --box-shadow: var(--shadow-light);
     width: 100%;
     margin-top: 10px;
     --padding: 1rem;
 
-    ion-img{
-     display: block;
-     margin: auto;
+    ion-img {
+      display: block;
+      margin: auto;
     }
   }
 }
 
-.search-input-control{
-    padding-left: 3rem;
-    padding-right: 3rem;
+.search-input-control {
+  padding-left: 3rem;
+  padding-right: 3rem;
 
-    ion-input{
-        font-size: 1.4rem;
-        border-bottom: 1px solid var(--label-grey);
-        font-family: var(--medium);
-        --padding-start:0;
-    }
+  ion-input {
+    font-size: 1.4rem;
+    border-bottom: 1px solid var(--label-grey);
+    font-family: var(--medium);
+    --padding-start: 0;
+  }
 
-    ion-button{
-        margin-left: 1.2rem;
-        min-width: 7.7rem;
-        font-size: 1.1rem;
-        min-height: 3rem;
-        --box-shadow:none;
-        font-family: var(--medium);
-        --background:var(--light-red);
-    }
+  ion-button {
+    margin-left: 1.2rem;
+    min-width: 7.7rem;
+    font-size: 1.1rem;
+    min-height: 3rem;
+    --box-shadow: none;
+    font-family: var(--medium);
+    --background: var(--light-red);
+  }
 }
 
 
 
-.alert-box{
+.alert-box {
+  font-family: var(--semi-bold);
+  font-size: 1rem;
+  @include shadow(var(--shadow-secondary));
+  background-color: var(--alert-warning);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 2rem 0.6rem;
+  line-height: 0.9rem;
+  letter-spacing: 0.001rem;
+
+  h2 {
+    font-size: 1.2rem;
     font-family: var(--semi-bold);
-    font-size: 1rem;
-    @include shadow(var(--shadow-secondary));
-    background-color: var(--alert-warning);
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding:0.5rem 2rem 0.6rem;
-    line-height: 0.9rem;
-    letter-spacing: 0.001rem;
-
-    h2{
-      font-size: 1.2rem;
-      font-family: var(--semi-bold);
-      margin:0 0 0.5rem;
-      padding: 0;
-    }
-    p{
-      margin:0;
-      padding: 0;
-    }
-
+    margin: 0 0 0.5rem;
+    padding: 0;
   }
-.custom-menu{
-//   --ion-backdrop-color:var(--transparent);
-  --background:rgba(var(--ion-color-primary-contrast-rgb), .9);
-  
-  ion-content{
-    --background:var(--transparent);
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+.custom-menu {
+  //   --ion-backdrop-color:var(--transparent);
+  --background: rgba(var(--ion-color-primary-contrast-rgb), .9);
+
+  ion-content {
+    --background: var(--transparent);
     background: url('assets/images/menu-bg.png') no-repeat top center;
     background-size: contain;
   }
 
-  .profile-info{
+  .profile-info {
     padding: 3rem;
-    ion-img{
+
+    ion-img {
       height: 7.3rem;
       width: 7.3rem;
       @include border-radius(50%);
       @include shadow(0 0 1rem 0rem rgba(0, 0, 0, 0.2));
       margin-bottom: 1.78rem;
     }
-    ion-text{
+
+    ion-text {
       line-height: 1;
-      h3{
+
+      h3 {
         font-size: 2.2rem;
         font-family: var(--semi-bold);
         margin: 0;
         margin-bottom: 1rem;
-        color:var(--title-color);
+        color: var(--title-color);
       }
-      p{
+
+      p {
         font-size: 1.5rem;
         margin: 0;
       }
     }
 
-    ion-button{
+    ion-button {
       margin-left: 2rem;
     }
   }
 }
 
-.menu-list{
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	li{
-		margin-bottom: 2.5rem;
-		ion-label{
-			margin: 0;
-			padding: 1rem 5rem 1rem 3rem;
-			background: var(--white);
-			font-size: 1.2rem;
-			font-family: var(--semi-bold);
-			color:var(--menu-text);
-			@include border-radius(0 2rem 2rem 0);
-			@include shadow(var(--shadow-secondary));
-			display: inline-flex;
-			position: relative;
-			cursor: pointer;
-			text-transform: capitalize;
+.menu-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 
-			&:before{
-				content: "";
-				height:.4rem;
-				width: .4rem;
-				background: var(--sky-blue);
-				--border-radius: 50%;
-				@include border-radius(var(--border-radius));
-				display:block;
-				position: absolute;
-				left:1.5rem;
-				top:1.7rem;
-			}
-		}
-	}
+  li {
+    margin-bottom: 2.5rem;
+
+    ion-label,
+    .link {
+      margin: 0;
+      padding: 1rem 5rem 1rem 3rem;
+      background: var(--white);
+      font-size: 1.2rem;
+      font-family: var(--semi-bold);
+      color: var(--menu-text);
+      @include border-radius(0 2rem 2rem 0);
+      @include shadow(var(--shadow-secondary));
+      display: inline-flex;
+      position: relative;
+      cursor: pointer;
+      text-transform: capitalize;
+
+      &:before {
+        content: "";
+        height: .4rem;
+        width: .4rem;
+        background: var(--sky-blue);
+        --border-radius: 50%;
+        @include border-radius(var(--border-radius));
+        display: block;
+        position: absolute;
+        left: 1.5rem;
+        top: 1.7rem;
+      }
+    }
+  }
 }
 
-ion-button, ion-menu-button{
-	&[icon-btn]{
-		--size:3.2rem;
-		height: var(--size);
-		width: var(--size);
-		--background:var(--white);
-		--background-activated:var(--white);
-		--background-focused:var(--white);
-		--border-radius:var(--size);
-		--border-width:0;
-		--color:var(--ion-color-primary);
-		--color-activated:var(--ion-color-primary);
-		--color-focused:var(--ion-color-primary);
-		--ripple-color:var(--ion-color-primary);
-		--padding-start:0;
-		--padding-end: 0;
-		font-size: 1.1rem;
-		min-height: 0;
-		--box-shadow: var(--btn-shadow);
-	}
+ion-button,
+ion-menu-button {
+  &[icon-btn] {
+    --size: 3.2rem;
+    height: var(--size);
+    width: var(--size);
+    --background: var(--white);
+    --background-activated: var(--white);
+    --background-focused: var(--white);
+    --border-radius: var(--size);
+    --border-width: 0;
+    --color: var(--ion-color-primary);
+    --color-activated: var(--ion-color-primary);
+    --color-focused: var(--ion-color-primary);
+    --ripple-color: var(--ion-color-primary);
+    --padding-start: 0;
+    --padding-end: 0;
+    font-size: 1.1rem;
+    min-height: 0;
+    --box-shadow: var(--btn-shadow);
+  }
 }
-.btn-shadow
-{  
+
+.btn-shadow {
   background: var(--ion-color-light);
   border-radius: 50%;
   @include shadow(var(--btn-shadow));
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
-.no-pointer{
+
+.no-pointer {
   pointer-events: none;
 }
-.edit-alert{
-  --height:28.5rem;
-  --width:30rem;
-  --border-radius:2rem;
-  --border-width:0;
+
+.edit-alert {
+  --height: 28.5rem;
+  --width: 30rem;
+  --border-radius: 2rem;
+  --border-width: 0;
+}
+
+
+//styles for coach marks
+.coach-marks {
+  position: fixed;
+  position: fixed;
+  top: -0.1px;
+  left: -0.1px;
+  right: -0.1px;
+  bottom: -0.1px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 999;
+
+  //Dashboard coach marks
+  &.coach-dashboard {
+    * {
+      pointer-events: none;
+    }
+
+    header {
+      padding: 0.5rem 2.5rem;
+
+      ion-buttons {
+        justify-content: flex-end;
+
+        ion-fab-button {
+          margin: 0.5rem 0.5rem 0.5rem 0.82rem;
+          @extend %ion-fab-button-light;
+
+          ion-icon {
+            font-size: 1.5rem;
+          }
+
+          &:before {
+            @extend %coachmarks-text;
+          }
+        }
+      }
+
+      //coach mark for alert icon
+      [data-alert] {
+        &:before {
+          content: attr(data-alert);
+          text-align: left;
+          right: 10rem;
+          top: 96%;
+          max-width: 19.1rem;
+        }
+
+        &:after {
+          @extend %coachmarks-arrows;
+          @include coach-arrow('src/assets/images/coach-arrows/arrow_01.svg');
+          right: 9rem;
+          top: 10px;
+          width: 4rem;
+          height: 3rem;
+        }
+      }
+
+      //coach mark for menu button
+      [data-info] {
+        &:before {
+          content: attr(data-info);
+          text-align: right;
+          right: 1rem;
+          top: calc(100% + 4.25rem);
+          max-width: 17rem;
+
+          @include bp(sm-landscape) {
+            right: 2rem;
+            top: calc(100% + 2.25rem);
+          }
+
+        }
+
+        &:after {
+          @extend %coachmarks-arrows;
+          @include coach-arrow('src/assets/images/coach-arrows/arrow_02.svg');
+          width: 2.2rem;
+          height: 3.95rem;
+          right: 0;
+          top: 100%;
+        }
+      }
+
+    }
+
+    main {
+      position: fixed;
+      left: 10px;
+      right: 10px;
+      bottom: 70px;      
+      overflow: visible;
+      border: none;
+
+      ion-button {
+        min-width: 10.1rem;
+
+        
+        position:static !important;
+
+        &:before {
+          @extend %coachmarks-text;
+          bottom: calc(100% + 2rem);
+          min-height: 3rem;
+
+          @include bp(sm-landscape) {
+            bottom: calc(100% + 1rem);
+          }
+        }
+
+        &:after {
+          width: 2.3rem;
+          height: 3.95rem;
+          bottom: calc(100% + 0.5rem);
+
+          @include bp(sm-landscape) {
+            width: 1.7rem;
+            height: 2.95rem;
+            bottom: calc(100% + 0.5rem);
+          }
+        }
+
+        //Geofence coach mark
+        &.btn-left-bottom {
+          --border-radius: 0 3rem 0 3rem;
+
+          &:before {
+            content: attr(data-geofence);
+            left: 2rem;
+            text-align: left;
+            max-width: 50%;
+          }
+
+          &:after {
+            @extend %coachmarks-arrows;
+            @include coach-arrow('src/assets/images/coach-arrows/arrow_03.svg');
+            left: -0.5rem;
+
+            @include bp(sm-landscape) {
+              left: 0;
+            }
+          }
+        }
+
+        //Locate me coach mark
+        &.btn-right-bottom {
+          --border-radius: 3rem 0 3rem 0;
+
+          &:before {
+            content: attr(data-locate);
+            right: 2rem;
+            text-align: right;
+            max-width: 40%;
+          }
+
+          &:after {
+            @extend %coachmarks-arrows;
+            @include coach-arrow('src/assets/images/coach-arrows/arrow_04.svg');
+            right: -0.5rem;
+
+            @include bp(sm-landscape) {
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+
+
+    //Tractor usage coach marks
+    [data-tractor] {
+      width: 100%;
+
+      .tab-middle {
+        pointer-events: none;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      &:before {
+        @extend %coachmarks-text;
+        position: fixed;
+        bottom: 7rem;
+        right: calc(50% + 2.5rem);
+        text-align: right;
+        content: attr(data-tractor);
+        min-height: 4rem;
+        display: flex;
+        align-items: center;
+      }
+
+      &:after {
+        @extend %coachmarks-arrows;
+        @include coach-arrow('src/assets/images/coach-arrows/arrow_05.svg');
+        bottom: 5.5rem;
+        right: calc(50% - 1rem);
+        width: 2.7rem;
+        height: 3.9rem;
+      }
+    }
+
+    footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      .btn-tab-style {
+        pointer-events: none;
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        color: var(--ion-color-light);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        font-family: var(--semi-bold);
+
+        ion-icon {
+          font-size: 1.8rem;
+          margin-bottom: 0.5rem;
+        }
+
+
+        &[data-askme] {
+          position: relative;
+
+          &:before {
+            @extend %coachmarks-text;
+            bottom: 5.5rem;
+            left: 0;
+            right: 0;
+            text-align: left;
+            content: attr(data-askme);
+            min-height: 3rem;
+
+            @include bp(xxs) {
+              left: -2rem;
+            }
+          }
+
+          &:after {
+            @extend %coachmarks-arrows;
+            @include coach-arrow('src/assets/images/coach-arrows/arrow_06.svg');
+            left: calc(50% - 5rem);
+            bottom: 2rem;
+            width: 3.55rem;
+            height: 3.6rem;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  &.coach-footer-tractor {
+    top: auto;
+    height: 5.5rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+ ion-tabs ~ &{   
+    background: transparent;
+    pointer-events: none;
+      &:after {
+        content: "";
+        position: fixed;
+        background: rgba(0, 0, 0, 0.85);
+        top: auto;
+        left: -0.1px;
+        right: -0.1px;
+        bottom: 0;
+        width: 100%;
+        height: 54px;
+        z-index: -1;
+    }
+  }
+}
+
+.noInternet-connection:not(ion-menu) {
+  display: block;
+}
+
+.errorMessage {
+  font-size: 1.6rem;
+  color: var(--ion-color-light-contrast);
+  text-align: left;
+  align-self: flex-start;
+}
+
+// Applies a text wrap on ion options
+.alert-tappable.alert-radio {
+  height: auto;
+  contain: content;
+}
+
+.alert-radio-label.sc-ion-alert-md,
+.alert-radio-label.sc-ion-alert-ios {
+  white-space: normal;
 }
