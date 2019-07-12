@@ -58,6 +58,46 @@
   font-weight: normal;
   font-style: normal;
 }
+ // Icomoon Fonts for District & State svg
+ @font-face {
+  font-family: 'mahindra-Digisense';
+  src:  url('src/assets/fonts/mahindra-Digisense.eot?xo7azj');
+  src:  url('src/assets/fonts/mahindra-Digisense.eot?xo7azj#iefix') format('embedded-opentype'),
+    url('src/assets/fonts/mahindra-Digisense.ttf?xo7azj') format('truetype'),
+    url('src/assets/fonts/mahindra-Digisense.woff?xo7azj') format('woff');
+    //url('src/assets/fonts/mahindra-Digisense.svg?xo7azj#mahindra-Digisense') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mahindra-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'mahindra-Digisense' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 25rem;
+  color: #d9d9d9;
+  text-shadow: 2px 0 0 #9d263b, -2px 0 0 #9d263b, 0 2px 0 #9d263b, 0 -2px 0 #9d263b, 1px 1px #9d263b, -1px -1px 0 #9d263b, 1px -1px 0 #9d263b, -1px 1px 0 #9d263b;
+}
 
 
 // Global SCSS
@@ -107,7 +147,15 @@ body {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-
+.clear{
+  clear:both;
+  &:before,
+  &:after{
+    content:"";
+    clear:both;
+    display: table;
+  }
+}
 .margin-xs-r-50 {
   margin-right: 50%;
 
@@ -116,7 +164,9 @@ body {
   }
 
 }
-
+.hide{
+  display: none;
+}
 ion-button {
   margin: 0;
   font-size: 1.4rem;
@@ -261,7 +311,6 @@ ion-header {
         }
 
       }
-
     }
 
   }
@@ -335,6 +384,11 @@ ion-header {
       content: "";
       display: none;
     }
+    .clickable-btn{
+      display: inline-flex;
+      outline: none;
+      align-items: center;
+    }
   }
 
 
@@ -367,6 +421,7 @@ ion-header {
     min-width: 14.15rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    max-width: 50%;
 
     ion-select {
       @extend %ion-reset-padding;
@@ -628,7 +683,7 @@ ion-tabs {
           height: 0.35rem;
           --border-radius: 0.16rem;
           @include border-radius(var(--border-radius));
-          background-color: var(--dark-shade);
+          background-color: var(--ion-color-light);
           @include transform(translateX(-50%));
           position: absolute;
           left: 50%;
@@ -653,6 +708,7 @@ ion-tabs {
   padding-top: 0.6rem;
   @extend %background-transparent;
   overflow: visible;
+  color: var(--ion-color-light);
 
   &:before {
     content: "";
@@ -1026,12 +1082,20 @@ ion-button {
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
   position: fixed;
-  top: 0;
+ /*  top: 17rem; */
+ top:0;
   left: 0;
   width: 100%;
   padding: 0.5rem 2rem 0.6rem;
-  line-height: 0.9rem;
+  //line-height: 0.9rem;
   letter-spacing: 0.001rem;
+/* 
+  @include bp(sm-landscape) {
+    top:11.5rem;
+  }
+  @include bp(sm) {
+    top:10.5rem;
+  } */
 
   h2 {
     font-size: 1.2rem;
@@ -1043,6 +1107,9 @@ ion-button {
   p {
     margin: 0;
     padding: 0;
+  }
+  .next-line-msg{
+    display: block;
   }
 
 }
@@ -1066,6 +1133,8 @@ ion-button {
       @include border-radius(50%);
       @include shadow(0 0 1rem 0rem rgba(0, 0, 0, 0.2));
       margin-bottom: 1.78rem;
+      background: rgba(var(--ion-color-primary-contrast-rgb), .5);
+      overflow:hidden;
     }
 
     ion-text {
@@ -1341,6 +1410,9 @@ ion-menu-button {
           }
         }
       }
+      @include bp(md) {
+        bottom: 8.5rem;
+      }
     }
 
 
@@ -1371,7 +1443,7 @@ ion-menu-button {
       &:after {
         @extend %coachmarks-arrows;
         @include coach-arrow('src/assets/images/coach-arrows/arrow_05.svg');
-        bottom: 5.5rem;
+        bottom: 5rem;
         right: calc(50% - 1rem);
         width: 2.7rem;
         height: 3.9rem;
@@ -1445,7 +1517,9 @@ ion-menu-button {
 
  ion-tabs ~ &{   
     background: transparent;
-    pointer-events: none;
+    top: auto;
+    height: 5.4rem;
+
       &:after {
         content: "";
         position: fixed;
@@ -1481,4 +1555,37 @@ ion-menu-button {
 .alert-radio-label.sc-ion-alert-md,
 .alert-radio-label.sc-ion-alert-ios {
   white-space: normal;
+}
+// alert page date code 
+.alert-date{
+  font-size: 1.4rem;
+  font-family: var(--semi-bold);
+  color:var(--title-color);
+  margin-left: 3rem;
+}
+//styles for the page loader
+.loader-custom{
+  --background: transparent;
+  --spinner-color: var(--btn-tab-selected);
+  
+
+  .loading-wrapper{
+    box-shadow: none;
+  }
+  ion-spinner{  
+    width: 5rem;
+   height: 5rem;
+  }
+}
+.gm-style-iw{
+  button[aria-label="Close"]:after {
+    content: " ";
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }

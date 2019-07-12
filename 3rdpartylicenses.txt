@@ -603,6 +603,9 @@ Apache-2.0
  
 
 
+speak-tts
+MIT
+
 tslib
 Apache-2.0
 Apache License
